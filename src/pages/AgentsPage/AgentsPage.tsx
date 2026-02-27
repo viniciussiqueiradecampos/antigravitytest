@@ -165,8 +165,8 @@ export default function AgentsPage() {
                                 <div className="agent-stat"><span className="agent-stat-value">{agent.responseTime}</span><span className="agent-stat-label">Avg Reply</span></div>
                             </div>
                             <div className="agent-card__footer">
-                                <button className="agent-btn" onClick={() => setViewingAgent(agent)}>View Profile</button>
-                                <button className="agent-btn agent-btn--primary" onClick={() => setShowTicketModal(true)}>Assign</button>
+                                <button className="btn-secondary" onClick={() => setViewingAgent(agent)}>View Profile</button>
+                                <button className="btn-primary" onClick={() => setShowTicketModal(true)}>Assign</button>
                             </div>
                         </div>
                     );

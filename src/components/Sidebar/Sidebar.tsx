@@ -46,7 +46,7 @@ export default function Sidebar() {
                     </button>
                 </div>
                 <div className="sidebar__cta">
-                    <button className="btn-connect" onClick={() => setShowConnectModal(true)}>
+                    <button className="btn-connect btn-primary" onClick={() => setShowConnectModal(true)}>
                         <Plus size={18} strokeWidth={2.5} /><span>Connect New Account</span>
                     </button>
                 </div>

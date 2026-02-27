@@ -67,13 +67,17 @@
         margin-left: 0;
         padding-left: 16px;
         padding-right: 16px;
+        min-width: 0;
+        overflow-x: hidden;
     }
 
     .charts-row,
     .tables-row {
         grid-template-columns: 1fr;
         max-width: 100%;
-        overflow: hidden;
+        width: 100%;
+        overflow: visible;
+        gap: 20px;
     }
 
     .charts-row__main,
@@ -83,6 +87,8 @@
         height: auto;
         min-height: auto;
         max-width: 100%;
+        width: 100%;
+        min-width: 0;
     }
 
     .card {
