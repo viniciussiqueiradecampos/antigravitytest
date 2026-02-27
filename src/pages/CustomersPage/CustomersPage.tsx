@@ -72,44 +72,46 @@ export default function CustomersPage() {
             </div>
 
             <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
-                <table className="customers-table">
-                    <thead>
-                        <tr>
-                            <th>Customer</th>
-                            <th>Location</th>
-                            <th>Orders</th>
-                            <th>Total Spent</th>
-                            <th>Status</th>
-                            <th>Joined</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {filtered.map((c, i) => (
-                            <tr key={c.id} className="customer-table-row">
-                                <td>
-                                    <div className="cust-info">
-                                        <div className="cust-avatar" style={{ background: avatarColors[i % 10].bg, color: avatarColors[i % 10].text }}>{c.avatar}</div>
-                                        <div>
-                                            <p className="cust-name">{c.name}</p>
-                                            <p className="cust-email">{c.email}</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td className="perf-td-muted">{c.location}</td>
-                                <td className="perf-td-num">{c.orders}</td>
-                                <td>
-                                    <span className="cust-spent">${c.totalSpent.toLocaleString()}</span>
-                                </td>
-                                <td>
-                                    <span className={`cust-status ${c.status === 'active' ? 'cust-status--active' : 'cust-status--inactive'}`}>
-                                        {c.status}
-                                    </span>
-                                </td>
-                                <td className="perf-td-muted">{c.joined}</td>
+                <div className="table-container">
+                    <table className="customers-table">
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Location</th>
+                                <th>Orders</th>
+                                <th>Total Spent</th>
+                                <th>Status</th>
+                                <th>Joined</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {filtered.map((c, i) => (
+                                <tr key={c.id} className="customer-table-row">
+                                    <td>
+                                        <div className="cust-info">
+                                            <div className="cust-avatar" style={{ background: avatarColors[i % 10].bg, color: avatarColors[i % 10].text }}>{c.avatar}</div>
+                                            <div>
+                                                <p className="cust-name">{c.name}</p>
+                                                <p className="cust-email">{c.email}</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="perf-td-muted">{c.location}</td>
+                                    <td className="perf-td-num">{c.orders}</td>
+                                    <td>
+                                        <span className="cust-spent">${c.totalSpent.toLocaleString()}</span>
+                                    </td>
+                                    <td>
+                                        <span className={`cust-status ${c.status === 'active' ? 'cust-status--active' : 'cust-status--inactive'}`}>
+                                            {c.status}
+                                        </span>
+                                    </td>
+                                    <td className="perf-td-muted">{c.joined}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

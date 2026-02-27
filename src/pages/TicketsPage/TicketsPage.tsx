@@ -82,44 +82,46 @@ export default function TicketsPage() {
 
             {/* Table */}
             <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
-                <table className="tickets-table">
-                    <thead>
-                        <tr>
-                            <th>Ticket</th>
-                            <th>Customer</th>
-                            <th>Priority</th>
-                            <th>Status</th>
-                            <th>Category</th>
-                            <th>Assignee</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {filtered.map((tk, i) => {
-                            const sc = statusConfig[tk.status as keyof typeof statusConfig];
-                            const pc = priorityConfig[tk.priority as keyof typeof priorityConfig];
-                            return (
-                                <tr key={tk.id} className="ticket-row">
-                                    <td>
-                                        <p className="ticket-id">{tk.id}</p>
-                                        <p className="ticket-title">{tk.title}</p>
-                                    </td>
-                                    <td>
-                                        <div className="ticket-customer">
-                                            <div className="t-avatar" style={{ background: avatarColors[i % 8], color: avatarText[i % 8] }}>{tk.avatar}</div>
-                                            <span>{tk.customer}</span>
-                                        </div>
-                                    </td>
-                                    <td><span className={`priority-badge ${pc.class}`}>{pc.label}</span></td>
-                                    <td><span className={`status-pill ${sc.class}`}>{sc.label}</span></td>
-                                    <td><span className="ticket-category">{tk.category}</span></td>
-                                    <td className="perf-td-muted">{tk.assignee || <span className="unassigned">Unassigned</span>}</td>
-                                    <td className="perf-td-muted">{tk.date}</td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
+                <div className="table-container">
+                    <table className="tickets-table">
+                        <thead>
+                            <tr>
+                                <th>Ticket</th>
+                                <th>Customer</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                                <th>Category</th>
+                                <th>Assignee</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {filtered.map((tk, i) => {
+                                const sc = statusConfig[tk.status as keyof typeof statusConfig];
+                                const pc = priorityConfig[tk.priority as keyof typeof priorityConfig];
+                                return (
+                                    <tr key={tk.id} className="ticket-row">
+                                        <td>
+                                            <p className="ticket-id">{tk.id}</p>
+                                            <p className="ticket-title">{tk.title}</p>
+                                        </td>
+                                        <td>
+                                            <div className="ticket-customer">
+                                                <div className="t-avatar" style={{ background: avatarColors[i % 8], color: avatarText[i % 8] }}>{tk.avatar}</div>
+                                                <span>{tk.customer}</span>
+                                            </div>
+                                        </td>
+                                        <td><span className={`priority-badge ${pc.class}`}>{pc.label}</span></td>
+                                        <td><span className={`status-pill ${sc.class}`}>{sc.label}</span></td>
+                                        <td><span className="ticket-category">{tk.category}</span></td>
+                                        <td className="perf-td-muted">{tk.assignee || <span className="unassigned">Unassigned</span>}</td>
+                                        <td className="perf-td-muted">{tk.date}</td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

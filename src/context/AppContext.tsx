@@ -19,6 +19,8 @@ interface AppContextType {
     setEditingProduct: (p: unknown) => void;
     userPhoto: string;
     setUserPhoto: (url: string) => void;
+    mobileMenuOpen: boolean;
+    setMobileMenuOpen: (v: boolean) => void;
 }
 
 const AppContext = createContext<AppContextType | null>(null);
@@ -31,20 +33,21 @@ export function AppProvider({ children }: { children: ReactNode }) {
     const [showProductModal, setShowProductModal] = useState(false);
     const [editingProduct, setEditingProduct] = useState<unknown>(null);
     const [userPhoto, setUserPhoto] = useState('https://api.dicebear.com/9.x/avataaars/svg?seed=mariana&backgroundColor=b6e3f4');
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    function closeAll() {
+        setOpenPanel('none');
+        setShowUserMenu(false);
+        setMobileMenuOpen(false);
+    }
 
     function navigate(p: Page) {
         setCurrentPage(p);
-        setOpenPanel('none');
-        setShowUserMenu(false);
+        closeAll();
     }
 
     function togglePanel(p: Panel) {
         setOpenPanel(prev => prev === p ? 'none' : p);
-        setShowUserMenu(false);
-    }
-
-    function closeAll() {
-        setOpenPanel('none');
         setShowUserMenu(false);
     }
 
@@ -56,6 +59,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
             showProductModal, setShowProductModal,
             editingProduct, setEditingProduct,
             userPhoto, setUserPhoto,
+            mobileMenuOpen, setMobileMenuOpen,
         }}>
             {children}
         </AppContext.Provider>

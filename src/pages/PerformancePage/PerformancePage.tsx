@@ -103,29 +103,31 @@ export default function PerformancePage() {
                     <div className="card-header">
                         <h2 className="card-title">Top Landing Pages</h2>
                     </div>
-                    <table className="perf-table">
-                        <thead>
-                            <tr>
-                                <th>Page</th>
-                                <th>Sessions</th>
-                                <th>Bounce Rate</th>
-                                <th>Avg. Duration</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {topPages.map((p, i) => (
-                                <tr key={i}>
-                                    <td>
-                                        <p className="perf-page-path">{p.page}</p>
-                                        <p className="perf-page-title">{p.title}</p>
-                                    </td>
-                                    <td className="perf-td-num">{p.sessions.toLocaleString()}</td>
-                                    <td className="perf-td-muted">{p.bounce}</td>
-                                    <td className="perf-td-muted">{p.duration}</td>
+                    <div className="table-container">
+                        <table className="perf-table">
+                            <thead>
+                                <tr>
+                                    <th>Page</th>
+                                    <th>Sessions</th>
+                                    <th>Bounce Rate</th>
+                                    <th>Avg. Duration</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {topPages.map((p, i) => (
+                                    <tr key={i}>
+                                        <td>
+                                            <p className="perf-page-path">{p.page}</p>
+                                            <p className="perf-page-title">{p.title}</p>
+                                        </td>
+                                        <td className="perf-td-num">{p.sessions.toLocaleString()}</td>
+                                        <td className="perf-td-muted">{p.bounce}</td>
+                                        <td className="perf-td-muted">{p.duration}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 {/* Devices */}

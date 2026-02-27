@@ -82,33 +82,42 @@
     align-items: start;
 }
 
-.perf-chart-card {
-    grid-column: 1;
+@media (max-width: 1024px) {
+    .perf-charts-row {
+        grid-template-columns: 1fr;
+    }
+
+    .perf-chart-card,
+    .perf-countries-card,
+    .perf-table-card,
+    .perf-devices-card {
+        grid-column: auto;
+    }
 }
 
-.perf-countries-card {
-    grid-column: 2;
-}
-
-.perf-table-card {
-    grid-column: 1;
-}
-
-.perf-devices-card {
-    grid-column: 2;
-}
-
-.countries-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .country-item {
     display: grid;
-    grid-template-columns: 24px 1fr 100px 60px;
+    grid-template-columns: 24px 1fr 60px;
     align-items: center;
     gap: 10px;
+}
+
+@media (min-width: 1025px) {
+    .country-item {
+        grid-template-columns: 24px 1fr 100px 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .country-bar-track {
+        display: none;
+    }
 }
 
 .country-flag {

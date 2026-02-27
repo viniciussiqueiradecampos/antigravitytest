@@ -80,24 +80,26 @@ export default function ReportsPage() {
                 {/* Top Products */}
                 <div className="card">
                     <div className="card-header"><h2 className="card-title">Top Selling Products</h2></div>
-                    <table className="perf-table">
-                        <thead>
-                            <tr><th>Product</th><th>Units</th><th>Revenue</th><th>Growth</th></tr>
-                        </thead>
-                        <tbody>
-                            {topSellingProducts.map((p, i) => (
-                                <tr key={i}>
-                                    <td>
-                                        <p className="perf-page-path">{p.name}</p>
-                                        <p className="perf-page-title">{p.category}</p>
-                                    </td>
-                                    <td className="perf-td-num">{p.units}</td>
-                                    <td className="cust-spent">${p.revenue.toLocaleString()}</td>
-                                    <td><span style={{ color: '#22c55e', fontWeight: 600, fontSize: 12 }}>{p.growth}</span></td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    <div className="table-container">
+                        <table className="perf-table">
+                            <thead>
+                                <tr><th>Product</th><th>Units</th><th>Revenue</th><th>Growth</th></tr>
+                            </thead>
+                            <tbody>
+                                {topSellingProducts.map((p, i) => (
+                                    <tr key={i}>
+                                        <td>
+                                            <p className="perf-page-path">{p.name}</p>
+                                            <p className="perf-page-title">{p.category}</p>
+                                        </td>
+                                        <td className="perf-td-num">{p.units}</td>
+                                        <td className="cust-spent">${p.revenue.toLocaleString()}</td>
+                                        <td><span style={{ color: '#22c55e', fontWeight: 600, fontSize: 12 }}>{p.growth}</span></td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

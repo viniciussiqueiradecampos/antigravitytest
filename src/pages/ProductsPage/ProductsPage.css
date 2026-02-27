@@ -4,6 +4,24 @@
     gap: 16px;
 }
 
+@media (max-width: 1440px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .product-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);

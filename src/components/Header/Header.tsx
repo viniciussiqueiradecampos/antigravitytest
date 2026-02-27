@@ -1,20 +1,29 @@
-import { Search, Bell, Mail } from 'lucide-react';
+import { Search, Bell, MessageSquare, Menu, Mail } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import UserMenu from '../UserMenu/UserMenu';
 import './Header.css';
 
 export default function Header() {
-    const { togglePanel, openPanel, showUserMenu, setShowUserMenu, userPhoto } = useApp();
+    const {
+        openPanel, togglePanel, showUserMenu, setShowUserMenu,
+        userPhoto, setMobileMenuOpen
+    } = useApp();
 
     return (
         <header className="header">
-            <div className="header__logo">
-                <div className="logo-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="#4f46e5" strokeWidth="2.5" />
-                        <circle cx="12" cy="12" r="4" fill="#4f46e5" />
-                    </svg>
+            <div className="header__left">
+                <button className="mobile-menu-trigger" onClick={() => setMobileMenuOpen(true)}>
+                    <Menu size={20} />
+                </button>
+                <div className="logo-section">
+                    <div className="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="#4f46e5" strokeWidth="2.5" />
+                            <circle cx="12" cy="12" r="4" fill="#4f46e5" />
+                        </svg>
+                    </div>
+                    <span className="logo-text">Vinnycampos<span>.eu</span></span>
                 </div>
-                <span className="logo-text">Vinnycampos<span>.eu</span></span>
             </div>
 
             <div className="header__search">

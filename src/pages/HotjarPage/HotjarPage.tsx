@@ -129,43 +129,45 @@ export default function HotjarPage() {
                         <h2 className="card-title">Session Recordings</h2>
                         <span className="badge-new">328 NEW</span>
                     </div>
-                    <table className="perf-table">
-                        <thead>
-                            <tr>
-                                <th>Session ID</th>
-                                <th>User</th>
-                                <th>Country</th>
-                                <th>Duration</th>
-                                <th>Pages</th>
-                                <th>Rage Clicks</th>
-                                <th>Date</th>
-                                <th>Device</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {recordings.map(r => (
-                                <tr key={r.id}>
-                                    <td><span className="recording-id">{r.id}</span></td>
-                                    <td className="perf-td-num">{r.user}</td>
-                                    <td className="perf-td-num">{r.country}</td>
-                                    <td className="perf-td-muted">{r.duration}</td>
-                                    <td className="perf-td-muted">{r.pages}</td>
-                                    <td>
-                                        <span className={`rage-badge ${r.rage > 0 ? 'rage-badge--warn' : ''}`}>{r.rage}</span>
-                                    </td>
-                                    <td className="perf-td-muted">{r.date}</td>
-                                    <td className="perf-td-muted">{r.device}</td>
-                                    <td>
-                                        <button className="play-btn">
-                                            <Play size={12} />
-                                            <span>{r.status === 'new' ? 'Watch' : 'Replay'}</span>
-                                        </button>
-                                    </td>
+                    <div className="table-container">
+                        <table className="perf-table">
+                            <thead>
+                                <tr>
+                                    <th>Session ID</th>
+                                    <th>User</th>
+                                    <th>Country</th>
+                                    <th>Duration</th>
+                                    <th>Pages</th>
+                                    <th>Rage Clicks</th>
+                                    <th>Date</th>
+                                    <th>Device</th>
+                                    <th></th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {recordings.map(r => (
+                                    <tr key={r.id}>
+                                        <td><span className="recording-id">{r.id}</span></td>
+                                        <td className="perf-td-num">{r.user}</td>
+                                        <td className="perf-td-num">{r.country}</td>
+                                        <td className="perf-td-muted">{r.duration}</td>
+                                        <td className="perf-td-muted">{r.pages}</td>
+                                        <td>
+                                            <span className={`rage-badge ${r.rage > 0 ? 'rage-badge--warn' : ''}`}>{r.rage}</span>
+                                        </td>
+                                        <td className="perf-td-muted">{r.date}</td>
+                                        <td className="perf-td-muted">{r.device}</td>
+                                        <td>
+                                            <button className="play-btn">
+                                                <Play size={12} />
+                                                <span>{r.status === 'new' ? 'Watch' : 'Replay'}</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             )}
 

@@ -59,9 +59,49 @@
 
 .hotjar-main-grid {
     display: grid;
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: 1fr 340px;
     gap: 20px;
     align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .hotjar-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        flex-direction: column;
+    }
+
+    .hotjar-kpis {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .hotjar-tabs {
+        overflow-x: auto;
+        padding-bottom: 4px;
+        display: flex;
+        gap: 8px;
+    }
+
+    .hotjar-tab {
+        white-space: nowrap;
+    }
+
+    .heatmap-browser {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .heatmap-content {
+        min-width: 800px;
+    }
+
+    .funnel-bar-label {
+        font-size: 11px;
+    }
 }
 
 .heatmap-card {
