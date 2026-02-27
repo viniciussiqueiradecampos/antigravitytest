@@ -10,7 +10,10 @@ const statusConfig = {
     canceled: { label: 'Canceled', class: 'ord-status--canceled' },
 };
 
+import { useApp } from '../../context/AppContext';
+
 export default function OrdersPage() {
+    const { setShowExportOrdersModal } = useApp();
     const [search, setSearch] = useState('');
     const [filterStatus, setFilterStatus] = useState('all');
     const [openOrder, setOpenOrder] = useState<string | null>(null);
@@ -27,7 +30,6 @@ export default function OrdersPage() {
         const matchStatus = filterStatus === 'all' || o.status === filterStatus;
         return matchSearch && matchStatus;
     });
-
     return (
         <div className="page-content">
             <div className="page-header">
@@ -35,7 +37,7 @@ export default function OrdersPage() {
                     <h1 className="page-title">Orders</h1>
                     <p className="page-subtitle">Track and manage all customer orders</p>
                 </div>
-                <button className="btn-primary">Export Orders</button>
+                <button className="btn-primary" onClick={() => setShowExportOrdersModal(true)}>Export Orders</button>
             </div>
 
             <div className="kpi-grid">

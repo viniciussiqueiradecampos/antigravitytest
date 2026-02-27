@@ -2,7 +2,10 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { monthlyRevenue, revenueByCategory, topSellingProducts } from '../../data/mockData';
 import './ReportsPage.css';
 
+import { useApp } from '../../context/AppContext';
+
 export default function ReportsPage() {
+    const { setShowExportPDFModal } = useApp();
     const totalRev = monthlyRevenue.reduce((s, m) => s + m.revenue, 0);
     const totalProfit = monthlyRevenue.reduce((s, m) => s + m.profit, 0);
     const totalExpenses = monthlyRevenue.reduce((s, m) => s + m.expenses, 0);
@@ -18,7 +21,7 @@ export default function ReportsPage() {
                     <button className="filter-btn filter-btn--active">This Quarter</button>
                     <button className="filter-btn">Last Quarter</button>
                     <button className="filter-btn">Year to Date</button>
-                    <button className="btn-primary" style={{ marginLeft: 8 }}>↓ Export PDF</button>
+                    <button className="btn-primary" onClick={() => setShowExportPDFModal(true)} style={{ marginLeft: 8 }}>↓ Export PDF</button>
                 </div>
             </div>
 

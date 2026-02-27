@@ -24,7 +24,7 @@ function NavItem({ label, icon, active, badge, badgeColor, onClick }: NavItemPro
 }
 
 export default function Sidebar() {
-    const { currentPage, navigate, setShowLogoutModal, mobileMenuOpen, setMobileMenuOpen } = useApp();
+    const { currentPage, navigate, setShowLogoutModal, mobileMenuOpen, setMobileMenuOpen, setShowConnectModal } = useApp();
     const navTo = (p: Page) => () => navigate(p);
 
     return (
@@ -46,7 +46,7 @@ export default function Sidebar() {
                     </button>
                 </div>
                 <div className="sidebar__cta">
-                    <button className="btn-connect">
+                    <button className="btn-connect" onClick={() => setShowConnectModal(true)}>
                         <Plus size={18} strokeWidth={2.5} /><span>Connect New Account</span>
                     </button>
                 </div>

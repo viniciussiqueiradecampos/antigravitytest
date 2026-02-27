@@ -19,7 +19,10 @@ const priorityConfig = {
 const avatarColors = ['#dbeafe', '#fce7f3', '#d1fae5', '#fef3c7', '#ede9fe', '#fee2e2', '#d1fae5', '#fef3c7'];
 const avatarText = ['#1e40af', '#9d174d', '#065f46', '#92400e', '#5b21b6', '#7f1d1d', '#065f46', '#92400e'];
 
+import { useApp } from '../../context/AppContext';
+
 export default function TicketsPage() {
+    const { setShowTicketModal } = useApp();
     const [search, setSearch] = useState('');
     const [filterStatus, setFilterStatus] = useState('all');
 
@@ -43,7 +46,7 @@ export default function TicketsPage() {
                     <h1 className="page-title">Support Tickets</h1>
                     <p className="page-subtitle">Manage and resolve customer support requests</p>
                 </div>
-                <button className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                <button className="btn-primary" onClick={() => setShowTicketModal(true)} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                     <Plus size={16} />
                     New Ticket
                 </button>

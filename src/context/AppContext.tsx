@@ -15,12 +15,28 @@ interface AppContextType {
     setShowLogoutModal: (v: boolean) => void;
     showProductModal: boolean;
     setShowProductModal: (v: boolean) => void;
-    editingProduct: unknown;
-    setEditingProduct: (p: unknown) => void;
+    editingProduct: any;
+    setEditingProduct: (p: any) => void;
     userPhoto: string;
     setUserPhoto: (url: string) => void;
     mobileMenuOpen: boolean;
     setMobileMenuOpen: (v: boolean) => void;
+    // New Modals
+    showConnectModal: boolean;
+    setShowConnectModal: (v: boolean) => void;
+    showTicketModal: boolean;
+    setShowTicketModal: (v: boolean) => void;
+    showAgentModal: boolean;
+    setShowAgentModal: (v: boolean) => void;
+    showCustomerModal: boolean;
+    setShowCustomerModal: (v: boolean) => void;
+    showExportOrdersModal: boolean;
+    setShowExportOrdersModal: (v: boolean) => void;
+    showExportPDFModal: boolean;
+    setShowExportPDFModal: (v: boolean) => void;
+    // Agent View
+    viewingAgent: any;
+    setViewingAgent: (a: any) => void;
 }
 
 const AppContext = createContext<AppContextType | null>(null);
@@ -31,19 +47,39 @@ export function AppProvider({ children }: { children: ReactNode }) {
     const [showUserMenu, setShowUserMenu] = useState(false);
     const [showLogoutModal, setShowLogoutModal] = useState(false);
     const [showProductModal, setShowProductModal] = useState(false);
-    const [editingProduct, setEditingProduct] = useState<unknown>(null);
+    const [editingProduct, setEditingProduct] = useState<any>(null);
     const [userPhoto, setUserPhoto] = useState('https://api.dicebear.com/9.x/avataaars/svg?seed=mariana&backgroundColor=b6e3f4');
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    // New Modals State
+    const [showConnectModal, setShowConnectModal] = useState(false);
+    const [showTicketModal, setShowTicketModal] = useState(false);
+    const [showAgentModal, setShowAgentModal] = useState(false);
+    const [showCustomerModal, setShowCustomerModal] = useState(false);
+    const [showExportOrdersModal, setShowExportOrdersModal] = useState(false);
+    const [showExportPDFModal, setShowExportPDFModal] = useState(false);
+
+    // Agent Detail View
+    const [viewingAgent, setViewingAgent] = useState<any>(null);
 
     function closeAll() {
         setOpenPanel('none');
         setShowUserMenu(false);
         setMobileMenuOpen(false);
+        setShowLogoutModal(false);
+        setShowProductModal(false);
+        setShowConnectModal(false);
+        setShowTicketModal(false);
+        setShowAgentModal(false);
+        setShowCustomerModal(false);
+        setShowExportOrdersModal(false);
+        setShowExportPDFModal(false);
     }
 
     function navigate(p: Page) {
         setCurrentPage(p);
         closeAll();
+        setViewingAgent(null);
     }
 
     function togglePanel(p: Panel) {
@@ -60,6 +96,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
             editingProduct, setEditingProduct,
             userPhoto, setUserPhoto,
             mobileMenuOpen, setMobileMenuOpen,
+            showConnectModal, setShowConnectModal,
+            showTicketModal, setShowTicketModal,
+            showAgentModal, setShowAgentModal,
+            showCustomerModal, setShowCustomerModal,
+            showExportOrdersModal, setShowExportOrdersModal,
+            showExportPDFModal, setShowExportPDFModal,
+            viewingAgent, setViewingAgent,
         }}>
             {children}
         </AppContext.Provider>

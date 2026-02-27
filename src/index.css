@@ -84,3 +84,31 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-text-placeholder);
 }
+
+/* Global Table & Layout Utils */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  background: var(--color-surface);
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

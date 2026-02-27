@@ -6,6 +6,11 @@ import MessagesPanel from './components/MessagesPanel/MessagesPanel';
 import UserMenu from './components/UserMenu/UserMenu';
 import LogoutModal from './components/LogoutModal/LogoutModal';
 import ProductModal from './components/ProductModal/ProductModal';
+import ConnectAccountModal from './components/Modals/ConnectAccountModal';
+import NewTicketModal from './components/Modals/NewTicketModal';
+import AddAgentModal from './components/Modals/AddAgentModal';
+import AddCustomerModal from './components/Modals/AddCustomerModal';
+import ExportModal from './components/Modals/ExportModal';
 import KpiCards from './components/KpiCards/KpiCards';
 import SalesChart from './components/SalesChart/SalesChart';
 import TrafficSources from './components/TrafficSources/TrafficSources';
@@ -24,7 +29,7 @@ import './App.css';
 
 function Dashboard() {
     return (
-        <>
+        <div className="page-content">
             <div className="welcome-bar">
                 <h1 className="welcome-title">
                     Hey Mariana –{' '}
@@ -40,7 +45,7 @@ function Dashboard() {
                 <div className="tables-row__main"><Transactions /></div>
                 <div className="tables-row__side"><RecentCustomers /></div>
             </div>
-        </>
+        </div>
     );
 }
 
@@ -78,6 +83,11 @@ function AppInner() {
             {/* Modals */}
             <LogoutModal />
             <ProductModal />
+            <ConnectAccountModal />
+            <NewTicketModal />
+            <AddAgentModal />
+            <AddCustomerModal />
+            <ExportModal />
         </div>
     );
 }

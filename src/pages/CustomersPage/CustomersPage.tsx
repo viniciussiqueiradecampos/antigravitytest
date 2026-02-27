@@ -11,10 +11,12 @@ const avatarColors = [
     { bg: '#dbeafe', text: '#1e40af' }, { bg: '#fef3c7', text: '#92400e' },
 ];
 
+import { useApp } from '../../context/AppContext';
+
 export default function CustomersPage() {
+    const { setShowCustomerModal } = useApp();
     const [search, setSearch] = useState('');
     const [filterStatus, setFilterStatus] = useState('all');
-
     const totalSpent = customers.reduce((s, c) => s + c.totalSpent, 0);
     const activeCount = customers.filter(c => c.status === 'active').length;
     const avgOrder = Math.round(totalSpent / customers.reduce((s, c) => s + c.orders, 0));
@@ -24,7 +26,6 @@ export default function CustomersPage() {
         const matchStatus = filterStatus === 'all' || c.status === filterStatus;
         return matchSearch && matchStatus;
     });
-
     return (
         <div className="page-content">
             <div className="page-header">
@@ -32,7 +33,7 @@ export default function CustomersPage() {
                     <h1 className="page-title">Customers</h1>
                     <p className="page-subtitle">View and manage all your store customers</p>
                 </div>
-                <button className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                <button className="btn-primary" onClick={() => setShowCustomerModal(true)} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                     <Plus size={16} /> Add Customer
                 </button>
             </div>
