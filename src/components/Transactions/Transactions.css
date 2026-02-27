@@ -57,7 +57,7 @@
     align-items: center;
     gap: 16px;
     padding: 16px 24px;
-    border-bottom: 1px solid var(--color-border));
+    border-bottom: 1px solid var(--color-border);
     transition: var(--transition);
 }
 
@@ -153,4 +153,22 @@
 .tx-more-btn:hover {
     background: var(--color-border);
     color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+    .transactions__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .transaction-row {
+        grid-template-columns: 1fr 1fr auto;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .transaction-row__dest {
+        display: none;
+    }
 }

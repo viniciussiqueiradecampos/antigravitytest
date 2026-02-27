@@ -72,6 +72,8 @@
     .charts-row,
     .tables-row {
         grid-template-columns: 1fr;
+        max-width: 100%;
+        overflow: hidden;
     }
 
     .charts-row__main,
@@ -80,10 +82,36 @@
     .tables-row__side {
         height: auto;
         min-height: auto;
+        max-width: 100%;
     }
 
-    .welcome-title,
+    .card {
+        max-width: 100%;
+    }
+
+    .welcome-title {
+        font-size: 18px;
+        line-height: 1.4;
+        display: block;
+        max-width: 100%;
+        margin-bottom: 8px;
+        word-wrap: break-word;
+    }
+
     .welcome-subtitle {
-        font-size: 16px;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--color-text-muted);
+        display: block;
+        line-height: 1.5;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    .welcome-bar {
+        padding-top: 16px;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
     }
 }
