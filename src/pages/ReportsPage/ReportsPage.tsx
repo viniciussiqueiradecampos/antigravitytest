@@ -47,7 +47,7 @@ export default function ReportsPage() {
                         <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f5" vertical={false} />
                         <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#71717a' }} axisLine={false} tickLine={false} />
                         <YAxis tick={{ fontSize: 11, fill: '#71717a' }} axisLine={false} tickLine={false} tickFormatter={v => `$${v / 1000}k`} />
-                        <Tooltip contentStyle={{ borderRadius: '10px', border: '1px solid #e4e4e7', fontFamily: 'Plus Jakarta Sans' }} formatter={(v: number) => [`$${v.toLocaleString()}`]} />
+                        <Tooltip contentStyle={{ borderRadius: '10px', border: '1px solid #e4e4e7', fontFamily: 'Plus Jakarta Sans' }} formatter={(v: any) => [`$${v?.toLocaleString() || '0'}`]} />
                         <Legend wrapperStyle={{ fontSize: '12px', fontFamily: 'Plus Jakarta Sans', paddingTop: '12px' }} />
                         <Bar dataKey="revenue" fill="#4f46e5" radius={[4, 4, 0, 0]} name="Revenue" />
                         <Bar dataKey="expenses" fill="#e0e7ff" radius={[4, 4, 0, 0]} name="Expenses" />

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {
     AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
-    ResponsiveContainer, defs, linearGradient, stop
+    ResponsiveContainer
 } from 'recharts';
 import { Download } from 'lucide-react';
 import { salesData } from '../../data/mockData';

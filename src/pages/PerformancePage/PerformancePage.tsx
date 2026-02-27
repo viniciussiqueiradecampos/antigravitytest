@@ -67,7 +67,7 @@ export default function PerformancePage() {
                             <YAxis hide />
                             <Tooltip
                                 contentStyle={{ borderRadius: '10px', border: '1px solid #e4e4e7', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', fontFamily: 'Plus Jakarta Sans' }}
-                                formatter={(val: number) => [val.toLocaleString()]}
+                                formatter={(val: any) => [val?.toLocaleString() || '0']}
                             />
                             <Legend wrapperStyle={{ fontSize: '12px', fontFamily: 'Plus Jakarta Sans', paddingTop: '12px' }} />
                             <Line type="monotone" dataKey="sessions" stroke="#4f46e5" strokeWidth={2.5} dot={false} activeDot={{ r: 4 }} name="Sessions" />
@@ -139,7 +139,7 @@ export default function PerformancePage() {
                             <YAxis dataKey="device" type="category" tick={{ fontSize: 12, fill: '#71717a', fontFamily: 'Plus Jakarta Sans' }} axisLine={false} tickLine={false} width={60} />
                             <Tooltip
                                 contentStyle={{ borderRadius: '10px', border: '1px solid #e4e4e7', fontFamily: 'Plus Jakarta Sans' }}
-                                formatter={(val: number) => [`${val}%`]}
+                                formatter={(val: any) => [`${val}%`]}
                             />
                             <Bar dataKey="value" radius={[0, 6, 6, 0]}>
                                 {deviceData.map((d, i) => (
