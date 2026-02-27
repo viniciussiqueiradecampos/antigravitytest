@@ -1,0 +1,123 @@
+.recent-customers {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+.recent-customers__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.recent-customers__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+}
+
+.recent-customers__subtitle {
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+.customer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.customer-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.customer-row:last-child {
+    border-bottom: none;
+}
+
+.customer-row:hover {
+    padding-left: 4px;
+}
+
+.customer-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.customer-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.customer-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.customer-email {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.customer-meta {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.customer-amount {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.customer-city {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.see-all-customers-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: 1px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: var(--transition);
+    padding: 0;
+}
+
+.see-all-customers-btn:hover {
+    opacity: 1;
+}

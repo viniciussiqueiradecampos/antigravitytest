@@ -1,0 +1,217 @@
+.tickets-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.tickets-stat-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: var(--transition);
+}
+
+.tickets-stat-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.tickets-stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.tickets-stat-label {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+/* Toolbar */
+.tickets-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.toolbar-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    max-width: 360px;
+    height: 38px;
+    padding: 0 14px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.toolbar-search:focus-within {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.toolbar-search-input {
+    border: none;
+    outline: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    color: var(--color-text-primary);
+    background: transparent;
+    width: 100%;
+}
+
+.toolbar-search-input::placeholder {
+    color: var(--color-text-placeholder);
+}
+
+/* Table */
+.tickets-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tickets-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-text-placeholder);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 14px 16px;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tickets-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: middle;
+}
+
+.ticket-row {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.ticket-row:hover td {
+    background: rgba(79, 70, 229, 0.02);
+}
+
+.ticket-row:last-child td {
+    border-bottom: none;
+}
+
+.ticket-id {
+    font-size: 11px;
+    font-family: monospace;
+    color: var(--color-text-muted);
+    margin-bottom: 3px;
+}
+
+.ticket-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ticket-customer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+
+.t-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.priority-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.priority--critical {
+    background: #fee2e2;
+    color: #7f1d1d;
+}
+
+.priority--high {
+    background: #ffedd5;
+    color: #7c2d12;
+}
+
+.priority--medium {
+    background: #fef3c7;
+    color: #713f12;
+}
+
+.priority--low {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-pill {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 99px;
+}
+
+.status--open {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+.status--progress {
+    background: #fef3c7;
+    color: #713f12;
+}
+
+.status--resolved {
+    background: #dcfce7;
+    color: #14532d;
+}
+
+.ticket-category {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    background: var(--color-bg);
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--color-border);
+}
+
+.unassigned {
+    font-size: 12px;
+    color: var(--color-text-placeholder);
+    font-style: italic;
+}
+
+/* Shared toolbar-filter-btn already defined in PerformancePage.css via .filter-btn */

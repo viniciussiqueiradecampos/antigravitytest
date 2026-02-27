@@ -1,0 +1,45 @@
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.category-item-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.category-name {
+    flex: 1;
+    font-size: 13px;
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+
+.category-value {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.category-pct {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    width: 36px;
+    text-align: right;
+}

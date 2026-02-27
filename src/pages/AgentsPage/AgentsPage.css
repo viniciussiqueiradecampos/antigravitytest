@@ -1,0 +1,160 @@
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.agent-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.agent-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+    border-color: transparent;
+}
+
+.agent-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.agent-avatar-wrap {
+    position: relative;
+}
+
+.agent-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.agent-status-dot {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.agent-status-label {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.agent-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.agent-role {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.agent-email {
+    font-size: 12px;
+    color: var(--color-text-placeholder);
+}
+
+.agent-stars {
+    color: #f59e0b;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin: 4px 0;
+}
+
+.agent-rating-num {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-left: 4px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.agent-card__stats {
+    display: flex;
+    align-items: center;
+    background: var(--color-bg);
+    border-radius: 8px;
+    padding: 12px;
+    margin: 4px 0;
+    gap: 0;
+}
+
+.agent-stat {
+    flex: 1;
+    text-align: center;
+}
+
+.agent-stat-value {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.agent-stat-label {
+    font-size: 11px;
+    color: var(--color-text-muted);
+}
+
+.agent-stat-divider {
+    width: 1px;
+    height: 32px;
+    background: var(--color-border);
+    flex-shrink: 0;
+}
+
+.agent-card__footer {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.agent-btn {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+.agent-btn:hover {
+    background: var(--color-bg);
+}
+
+.agent-btn--primary {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+}
+
+.agent-btn--primary:hover {
+    background: #4338ca;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}

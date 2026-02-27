@@ -1,0 +1,63 @@
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding-top: var(--header-height);
+    background: var(--color-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 32px;
+}
+
+.welcome-bar {
+    padding-top: 24px;
+}
+
+.welcome-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.welcome-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--color-text-primary);
+}
+
+/* Charts Row */
+.charts-row {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 20px;
+    align-items: start;
+}
+
+.charts-row__main,
+.charts-row__side {
+    height: 320px;
+}
+
+/* Tables Row */
+.tables-row {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 20px;
+    align-items: start;
+}
+
+.tables-row__main {
+    min-height: 340px;
+}
+
+.tables-row__side {
+    min-height: 340px;
+}

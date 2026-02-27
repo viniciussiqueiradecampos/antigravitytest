@@ -1,0 +1,133 @@
+.ord-status {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 99px;
+}
+
+.ord-status--delivered {
+    background: #dcfce7;
+    color: #14532d;
+}
+
+.ord-status--shipped {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.ord-status--processing {
+    background: #fef3c7;
+    color: #713f12;
+}
+
+.ord-status--canceled {
+    background: #fee2e2;
+    color: #7f1d1d;
+}
+
+.order-detail-row {
+    background: var(--color-bg) !important;
+}
+
+.order-detail-row:hover td {
+    background: var(--color-bg) !important;
+}
+
+.order-detail {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.order-detail-section {
+    min-width: 140px;
+}
+
+.order-detail-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-text-placeholder);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.order-detail-value {
+    font-size: 13px;
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+
+.order-products-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.order-product-tag {
+    font-size: 11px;
+    background: var(--color-accent-bg);
+    color: var(--color-accent);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* Timeline */
+.order-timeline {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.timeline-step {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-border);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--color-border);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.timeline-step--done .timeline-dot {
+    background: #22c55e;
+    box-shadow: 0 0 0 2px #22c55e;
+}
+
+.timeline-step--current .timeline-dot {
+    background: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.timeline-line {
+    width: 60px;
+    height: 2px;
+    background: var(--color-border);
+    flex-shrink: 0;
+}
+
+.timeline-step--done .timeline-line {
+    background: #22c55e;
+}
+
+.timeline-label {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    font-weight: 500;
+}

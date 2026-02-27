@@ -1,0 +1,114 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.15s ease;
+}
+
+.modal {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+    position: relative;
+    animation: modalIn 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    color: var(--color-text-muted);
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    background: var(--color-border);
+    color: var(--color-text-primary);
+}
+
+/* Logout Modal */
+.logout-modal {
+    width: 380px;
+    padding: 40px 36px 32px;
+    text-align: center;
+}
+
+.logout-icon {
+    width: 64px;
+    height: 64px;
+    background: #fee2e2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.logout-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 10px;
+}
+
+.logout-desc {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.logout-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.logout-cancel {
+    flex: 1;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.logout-confirm {
+    flex: 1;
+    padding: 12px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.logout-confirm:hover {
+    background: #dc2626;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+}
