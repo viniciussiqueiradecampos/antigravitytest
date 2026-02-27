@@ -116,12 +116,20 @@
     }
 }
 
-.heatmap-card {
-    grid-column: 1;
+@media (min-width: 1025px) {
+    .heatmap-card {
+        grid-column: 1;
+    }
+
+    .hotjar-side-col {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
 }
 
 .hotjar-side-col {
-    grid-column: 2;
     display: flex;
     flex-direction: column;
     gap: 16px;
